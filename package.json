@@ -39,6 +39,7 @@
     "uglify-js": "^3.2.1"
   },
   "dependencies": {
+    "compose-function": "^3.0.3",
     "map-obj": "^2.0.0",
     "p-cancelable": "^0.3.0",
     "p-queue": "^2.3.0",
