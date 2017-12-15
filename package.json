@@ -35,5 +35,11 @@
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.0",
     "uglify-js": "^3.2.1"
+  },
+  "dependencies": {
+    "map-obj": "^2.0.0",
+    "p-cancelable": "^0.3.0",
+    "p-queue": "^2.3.0",
+    "p-timeout": "^2.0.1"
   }
 }

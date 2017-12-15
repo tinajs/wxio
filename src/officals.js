@@ -8,7 +8,7 @@ export const PATTERN = {
   SYNC: Symbol('SYNC'),
 }
 
-export default {
+export const APIS = {
   wx: {
     // - 网络
     //   - 发起请求
@@ -559,5 +559,5 @@ export default {
     setEnableDebug: {
       pattern: PATTERN.ASYNC,
     },
-  }
+  },
 }
