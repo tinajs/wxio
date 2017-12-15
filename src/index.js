@@ -1,10 +1,11 @@
+import Cancelable from 'p-cancelable'
 import map from 'map-obj'
-import globals from './globals'
+import globals from './utils/globals'
 import { APIS, PATTERN } from './officals'
 
 function promisify (api) {
-  return (options = {}) => new Promise((resolve, reject) => {
-    return api({
+  return (options = {}) => new Cancelable((onCancel, resolve, reject) => {
+    const job = api({
       ...options,
       success (...fulfilled) {
         resolve(...fulfilled)
@@ -19,10 +20,13 @@ function promisify (api) {
         reject(new Error(error))
       },
     })
+    if (job && typeof job.abort === 'function') {
+      onCancel(() => job.abort())
+    }
   })
 }
 
-exports.wechat = map(APIS.wechat, (name, { pattern }) => {
+export const wechat = map(APIS.wechat, (name, { pattern }) => {
   switch (pattern) {
     case PATTERN.SYNC:
     case PATTERN.EVENT:
