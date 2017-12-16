@@ -7,9 +7,10 @@
     "start": "rollup -c -w",
     "clean": "rimraf ./dist",
     "prebuild": "run-s clean",
-    "build": "run-s build:*",
-    "build:rollup": "rollup -c",
-    "build:minify": "uglifyjs --compress --mangle --output ./dist/wxio.min.js -- ./dist/wxio.js",
+    "build": "run-s build:rollup:* build:minify",
+    "build:rollup:core": "rollup -c",
+    "build:rollup:es6": "rollup -c rollup.config.es6.js",
+    "build:minify": "uglifyjs --compress --mangle --output ./dist/wxio.es6.min.js -- ./dist/wxio.es6.js",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -25,6 +26,7 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
     "deepmerge": "^2.0.1",
