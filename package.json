@@ -5,6 +5,7 @@
   "main": "dist/wxio.es6.js",
   "scripts": {
     "start": "rollup -c -w",
+    "test": "ava",
     "clean": "rimraf ./dist",
     "prebuild": "run-s clean",
     "build": "run-s build:rollup:* build:minify",
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/imyelo/wxio#readme",
   "devDependencies": {
+    "ava": "^0.25.0",
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -36,6 +38,7 @@
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.0",
+    "sinon": "^6.1.5",
     "uglify-js": "^3.2.1"
   },
   "dependencies": {
