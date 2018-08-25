@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "description": "",
   "main": "dist/wxio.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "rollup -c -w",
     "clean": "rimraf ./dist",
