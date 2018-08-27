@@ -1,6 +1,6 @@
 {
   "name": "wxio",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "",
   "main": "cjs/wxio.js",
   "module": "esm/wxio.js",
