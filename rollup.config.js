@@ -34,11 +34,4 @@ export default [
       format: 'esm',
     },
   },
-  {
-    output: {
-      name: pkg.name,
-      file: 'dist/wxio.js',
-      format: 'umd',
-    },
-  },
 ].map((config) => deepMerge({}, baseConfig, config))
