@@ -1,0 +1,21 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 5
+  },
+  "rules": {
+    "no-undef": 2
+  },
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "Symbol": true,
+    "Set": true,
+    "WeakSet": true,
+    "Map": true,
+    "WeakMap": true,
+    "Reflect": true,
+    "Promise": true,
+    "wx": true
+  }
+}

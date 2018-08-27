@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "node"
+  - "8"
+
+cache:
+  directoreis:
+  - $HOME/.npm
+
+before_install:
+  - npm install --global npm@latest
+  - npm --version
+
+install:
+  - npm i
+
+script:
+  - npm test
