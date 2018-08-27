@@ -5,11 +5,12 @@
   "main": "cjs/wxio.js",
   "module": "esm/wxio.js",
   "files": [
-    "dist"
+    "cjs",
+    "ems"
   ],
   "scripts": {
     "start": "rollup -c -w",
-    "clean": "rimraf ./dist",
+    "clean": "rimraf ./cjs ./esm",
     "prebuild": "npm run clean",
     "build": "run-s build:rollup build:uglify",
     "build:rollup": "rollup -c",
