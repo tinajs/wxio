@@ -14,7 +14,7 @@
     "prebuild": "npm run clean",
     "build": "run-s build:rollup build:uglify",
     "build:rollup": "rollup -c",
-    "build:uglify": "uglifyjs --compress --mangle --output ./dist/wxio.min.js -- ./dist/wxio.js",
+    "build:uglify": "uglifyjs --compress --mangle --output ./cjs/wxio.min.js -- ./cjs/wxio.js",
     "prepublishOnly": "npm run build",
     "test": "ava"
   },
