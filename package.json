@@ -6,7 +6,7 @@
   "module": "esm/wxio.js",
   "files": [
     "cjs",
-    "ems"
+    "esm"
   ],
   "scripts": {
     "start": "rollup -c -w",
