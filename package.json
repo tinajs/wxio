@@ -12,9 +12,7 @@
     "start": "rollup -c -w",
     "clean": "rimraf ./cjs ./esm",
     "prebuild": "npm run clean",
-    "build": "run-s build:rollup build:uglify",
-    "build:rollup": "rollup -c",
-    "build:uglify": "uglifyjs --compress --mangle --output ./cjs/wxio.min.js -- ./cjs/wxio.js",
+    "build": "rollup -c",
     "prepublishOnly": "npm run build",
     "pretest": "npm run build",
     "test": "ava"
@@ -41,8 +39,8 @@
     "rollup-plugin-babel": "^4.0.0-beta.8",
     "rollup-plugin-commonjs": "^9.1.5",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "sinon": "^6.1.5",
-    "uglify-js": "^3.4.8"
+    "rollup-plugin-terser": "^1.0.1",
+    "sinon": "^6.1.5"
   },
   "dependencies": {
     "map-obj": "^2.0.0",

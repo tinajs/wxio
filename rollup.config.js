@@ -3,6 +3,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import mergeWith from 'lodash/mergeWith'
 import partialRight from 'lodash/partialRight'
+import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 
 const deepMerge = partialRight(mergeWith, (dest, src) => {
@@ -27,6 +28,22 @@ export default [
       file: pkg.main,
       format: 'cjs',
     },
+  },
+  {
+    output: {
+      file: 'cjs/wxio.min.js',
+      format: 'cjs',
+    },
+    plugins: [
+      terser({
+        compress: {
+          pure_getters: true,
+          unsafe: true,
+          unsafe_comps: true,
+          warnings: false,
+        },
+      }),
+    ],
   },
   {
     output: {
