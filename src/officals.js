@@ -438,6 +438,9 @@ export const APIS = {
     canvasToTempFilePath: {
       pattern: PATTERN.ASYNC,
     },
+    canvasGetImageData: {
+      pattern: PATTERN.ASYNC,
+    },
     //   - 下拉刷新
     startPullDownRefresh: {
       pattern: PATTERN.ASYNC,
