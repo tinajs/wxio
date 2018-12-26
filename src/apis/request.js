@@ -4,7 +4,7 @@ import timeout from 'p-timeout'
 import globals from '../utils/globals'
 import promisify from '../utils/promisify'
 
-const CONCURRENCY = 5
+const CONCURRENCY = 10
 
 const queue = new Queue({ concurrency: CONCURRENCY })
 const request = promisify(globals.wx.request)
