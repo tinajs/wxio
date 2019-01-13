@@ -441,6 +441,9 @@ export const APIS = {
     canvasGetImageData: {
       pattern: PATTERN.ASYNC,
     },
+    canvasPutImageData: {
+      pattern: PATTERN.ASYNC,
+    },
     //   - 下拉刷新
     startPullDownRefresh: {
       pattern: PATTERN.ASYNC,
