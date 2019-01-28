@@ -7,3 +7,11 @@ global.wx.request = function ({ success }) {
 }
 
 global.wx.setStorage = function () {}
+
+global.wx.getFileSystemManager = function () {
+  return {
+    getFileInfo ({ success }) {
+      success('GET_FILE_INFO_SUCCESS')
+    },
+  }
+}

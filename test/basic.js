@@ -35,3 +35,18 @@ test('wxio.request should returns a promise', async t => {
 
   t.pass()
 })
+
+test('module function', async t => {
+  let manager = wxio.getFileSystemManager()
+  let promise = manager.getFileInfo()
+
+  t.true(typeof promise.then === 'function')
+  t.true(typeof promise.catch === 'function')
+  t.true(typeof promise.cancel === 'function')
+
+  let message = await promise
+
+  t.is(message, 'GET_FILE_INFO_SUCCESS')
+
+  t.pass()
+})
