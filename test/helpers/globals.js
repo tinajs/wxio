@@ -5,3 +5,5 @@ global.wx.request = function ({ success }) {
     success()
   }, 0)
 }
+
+global.wx.setStorage = function () {}
