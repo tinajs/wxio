@@ -4,19 +4,23 @@ import promisify from './utils/promisify'
 import { APIS, PATTERN } from './officals'
 import request from './apis/request'
 
-const wechat = map(APIS.wx, (name, { pattern }) => {
-  switch (pattern) {
-    case PATTERN.SYNC:
-    case PATTERN.EVENT:
-      return [name, globals.wx[name]]
+function mapPatterns (original, rules) {
+  return map(rules, (name, { pattern }) => {
+    switch (pattern) {
+      case PATTERN.SYNC:
+      case PATTERN.EVENT:
+        return [name, original[name]]
 
-    case PATTERN.ASYNC:
-      return [name, promisify(globals.wx[name])]
+      case PATTERN.ASYNC:
+        return [name, promisify(original[name])]
 
-    default:
-      throw new Error('Invalid pattern.')
-  }
-})
+      default:
+        throw new Error('Invalid pattern.')
+    }
+  })
+}
+
+const wechat = mapPatterns(globals.wx, APIS.wx)
 
 wechat.request = request
 
