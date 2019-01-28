@@ -5,7 +5,7 @@ import { APIS, PATTERN } from './officals'
 import request from './apis/request'
 
 function mapPatterns (original, rules) {
-  return map(rules, (name, { pattern }) => {
+  return map(rules, (name, { pattern, moduleName }) => {
     switch (pattern) {
       case PATTERN.SYNC:
       case PATTERN.EVENT:
@@ -13,6 +13,12 @@ function mapPatterns (original, rules) {
 
       case PATTERN.ASYNC:
         return [name, promisify(original[name])]
+
+      case PATTERN.MODULE:
+        return [name, function () {
+          const instance = original[name].apply(this, arguments)
+          return mapPatterns(instance, APIS[moduleName])
+        }]
 
       default:
         throw new Error('Invalid pattern.')

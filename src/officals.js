@@ -6,6 +6,7 @@ export const PATTERN = {
   ASYNC: Symbol('ASYNC'),
   EVENT: Symbol('EVENT'),
   SYNC: Symbol('SYNC'),
+  MODULE: Symbol('MODULE'),
 }
 
 export const APIS = {
@@ -158,6 +159,10 @@ export const APIS = {
     },
     openDocument: {
       pattern: PATTERN.ASYNC,
+    },
+    getFileSystemManager: {
+      pattern: PATTERN.MODULE,
+      moduleName: 'FileSystemManager',
     },
 
     // - 数据缓存
@@ -564,6 +569,92 @@ export const APIS = {
     //   - 打开 / 关闭调试
     setEnableDebug: {
       pattern: PATTERN.ASYNC,
+    },
+  },
+  FileSystemManager: {
+    access: {
+      pattern: PATTERN.ASYNC,
+    },
+    accessSync: {
+      pattern: PATTERN.SYNC,
+    },
+    appendFile: {
+      pattern: PATTERN.ASYNC,
+    },
+    appendFileSync: {
+      pattern: PATTERN.SYNC,
+    },
+    copyFile: {
+      pattern: PATTERN.ASYNC,
+    },
+    copyFileSync: {
+      pattern: PATTERN.SYNC,
+    },
+    getFileInfo: {
+      pattern: PATTERN.ASYNC,
+    },
+    getSavedFileList: {
+      pattern: PATTERN.ASYNC,
+    },
+    mkdir: {
+      pattern: PATTERN.ASYNC,
+    },
+    mkdirSync: {
+      pattern: PATTERN.SYNC,
+    },
+    readdir: {
+      pattern: PATTERN.ASYNC,
+    },
+    readdirSync: {
+      pattern: PATTERN.SYNC,
+    },
+    readFile: {
+      pattern: PATTERN.ASYNC,
+    },
+    readFileSync: {
+      pattern: PATTERN.SYNC,
+    },
+    removeSavedFile: {
+      pattern: PATTERN.ASYNC,
+    },
+    rename: {
+      pattern: PATTERN.ASYNC,
+    },
+    renameSync: {
+      pattern: PATTERN.SYNC,
+    },
+    rmdir: {
+      pattern: PATTERN.ASYNC,
+    },
+    rmdirSync: {
+      pattern: PATTERN.SYNC,
+    },
+    saveFile: {
+      pattern: PATTERN.ASYNC,
+    },
+    saveFileSync: {
+      pattern: PATTERN.SYNC,
+    },
+    stat: {
+      pattern: PATTERN.ASYNC,
+    },
+    statSync: {
+      pattern: PATTERN.SYNC,
+    },
+    unlink: {
+      pattern: PATTERN.ASYNC,
+    },
+    unlinkSync: {
+      pattern: PATTERN.SYNC,
+    },
+    unzip: {
+      pattern: PATTERN.ASYNC,
+    },
+    writeFile: {
+      pattern: PATTERN.ASYNC,
+    },
+    writeFileSync: {
+      pattern: PATTERN.SYNC,
     },
   },
 }
