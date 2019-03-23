@@ -55,6 +55,9 @@ export const APIS = {
     chooseImage: {
       pattern: PATTERN.ASYNC,
     },
+    chooseMessageFile: {
+      pattern: PATTERN.ASYNC,
+    },
     previewImage: {
       pattern: PATTERN.ASYNC,
     },
